@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Songs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="hero__eyebrow">Playlist for us</p>
+        <h1 class="hero__title">Our Songs</h1>
+        <p class="hero__subtitle">The songs that make me think about you</p>
+        <p class="hero__note">Press play when you miss me.</p>
+        <div class="hero__actions">
+          <button class="button button--primary" type="button" data-shuffle>
+            Shuffle a song
+          </button>
+          <button class="button button--ghost" type="button" data-scroll="add-more">
+            Add a new memory
+          </button>
+        </div>
+      </header>
+
+      <section class="songs" aria-label="Our shared songs">
+        <div class="songs__grid" id="songs-grid"></div>
+      </section>
+
+      <section class="playlist" aria-label="Spotify playlist">
+        <div class="playlist__header">
+          <h2>Spotify Playlist</h2>
+          <p>One place to loop everything back-to-back.</p>
+        </div>
+        <div class="embed embed--playlist">
+          <iframe
+            title="Spotify Playlist"
+            src="https://open.spotify.com/embed/playlist/7I1bN1o74aFc8wgExhChC1?utm_source=generator&theme=0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="add-more" id="add-more">
+        <div class="add-more__content">
+          <h2>Add more songs</h2>
+          <p>
+            Drop a link or a note when a new song reminds you of us.
+            This stays lightweight, but it hints at what comes next.
+          </p>
+          <form class="add-more__form">
+            <label class="add-more__label" for="song-input">
+              New song idea
+            </label>
+            <input
+              id="song-input"
+              type="text"
+              placeholder="Song link or message (coming soon)"
+              autocomplete="off"
+            />
+            <span class="add-more__hint">Saved in our hearts for now.</span>
+          </form>
+        </div>
+      </section>
+
+      <section class="love-note" aria-label="Love note">
+        <div class="love-note__card">
+          <h2>Little note</h2>
+          <p>
+            Every song on this page is a tiny postcard from me to you.
+            Thanks for filling my days with music, laughter, and soft magic.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Built for late-night listening and soft-glow memories.
+          Update the songs array in <code>script.js</code> to add more.
+        </p>
+      </footer>
+    </main>
+
+    <template id="song-card-template">
+      <article class="song-card" data-song-card>
+        <header class="song-card__header">
+          <span class="song-card__platform" data-platform></span>
+          <h3 class="song-card__caption" data-caption></h3>
+        </header>
+        <div class="embed">
+          <iframe
+            data-embed
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
